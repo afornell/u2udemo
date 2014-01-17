@@ -1,0 +1,86 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.display-none {
+  display: none;
+}
+
+.t-a-c {
+  text-align: center;
+}
+
+.item-list {
+  .item {
+    border: 1px solid #ccc;
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 22px;
+
+    .item-cover {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .item-info {
+      height: 55px;
+      padding: 8px;
+    }
+  }
+}
+
+.item-cover {
+  width: 220px;
+  height: 165px;
+  background: #e0e0e0;
+  border: 1px solid #ccc;
+}
+
+.tab-content {
+  padding-top: 20px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  background: #e0e0e0;
+  border: 1px solid #ccc;
+  border-radius: 500px;
+}
+
+.section-header {
+  background: #eee;
+  padding: 20px;
+  margin-bottom: 15px;
+
+  .avatar, .item-cover {
+    float: left;
+    margin: 0 20px 10px 0;
+  }
+
+  .title {
+    margin-top: 5px;
+  }
+}
+
+
+
+#shopping-cart {
+  .modal-dialog {
+    width: 300px;
+
+    .modal-footer {
+      text-align: left;
+    }
+  }
+
+  .item-thumbnail {
+    width: 64px;
+    height: 64px;
+    background: #e0e0e0;
+    border: 1px solid #ccc;
+    float: left;
+    margin-right: 20px;
+  }
+}

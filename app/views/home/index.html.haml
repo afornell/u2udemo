@@ -1,0 +1,167 @@
+%nav.navbar.navbar-default{role: "navigation"}
+  .container
+    .nav.navbar-nav.navbar-left
+      %a.navbar-brand{href: "#"} u2u
+    %ul.nav.navbar-nav.navbar-right
+      %li
+        %a
+          %span.glyphicon.glyphicon-shopping-cart
+          (2)
+      %li
+        %a
+          Wallet
+          ($4.25)
+      %li.dropdown
+        %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+          %span.glyphicon.glyphicon-user
+          Current User
+          %b.caret
+        %ul.dropdown-menu
+          %li
+            %a{href: "#"} Profile
+          %li
+            %a{href: "#"} Upload New Item
+          %li.divider
+          %li
+            %a{href: "#"} Sign out
+
+.container
+  .section-header
+    %h1.title u2u Prototype
+
+%form
+  .container
+    .row
+      .col-md-8
+        .form-group
+          %input.form-control{ type: 'text', placeholder: 'Search for mods...' }
+
+        .form-group
+          .btn-group
+            %button.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown", type: "button"}
+              Order by
+              %b Popularity
+              %span.caret
+            %ul.dropdown-menu{role: "menu"}
+              %li
+                %a{href: "#"} Popularity
+              %li
+                %a{href: "#"} Date Added
+              %li
+                %a{href: "#"} Rating
+
+          %button.btn.btn-default
+            Categories
+            %span.caret
+
+  .container.display-none
+    .form-group
+      .row
+        - for i in (1..12)
+          .col-xs-6.col-sm-4.col-md-3
+            %label.checkbox-inline
+              %input{type: "checkbox", value: "option#{i}"}= "Category #{i}"
+
+.container.item-list
+  .row
+    - for i in (1..12)
+      .col-sm-4.col-md-3
+        .item
+          .item-cover
+          .item-info
+            %a.btn.btn-primary.btn-sm.pull-right{"data-target" => "#shopping-cart", "data-toggle" => "modal", "data-backdrop" => 'false'} $0.50
+            Name of item
+
+
+.user-profile
+  .container
+    .section-header.clearfix
+      .avatar
+      %h3.title User Name
+      %a.btn.btn-default Edit
+
+  .container
+    %ul.nav.nav-tabs
+      %li.active
+        %a{href: "#"} Items
+      %li
+        %a{href: "#"} Purchases
+
+    .tab-content
+      .form-group
+        %a.btn.btn-primary
+          %span.glyphicon.glyphicon-plus
+          Upload New Item
+
+      .item-list
+        .row
+          - for i in (1..5)
+            .col-sm-4.col-md-3
+              .item
+                .item-cover
+                .item-info
+                  %a.btn.btn-success.btn-sm.pull-right Download
+                  Name of item
+
+
+.item-profile
+  .container
+    .section-header.clearfix
+      .item-cover
+      %h3.title Name of Item
+      %p
+        %a.btn.btn-primary $1.25
+      %p
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+  .container
+    %p
+      Created by
+      %a User Name
+    %p
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+.container
+  .section-header.clearfix
+    %h3.title Upload New Item
+.container
+  .row
+    .col-sm-8.col-sm-offset-2
+      %form
+        .form-group
+          %label Name
+          %input.form-control{ type: 'text', placeholder: 'Name' }
+        .form-group
+          %label Description
+          %textarea.form-control{ placeholder: 'Description' }
+        .form-group
+          %label File
+          %input.form-control{ type: 'file', placeholder: 'File' }
+          %p.help-block.text-muted
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        .form-group
+          .row
+            .col-md-4
+              %label Price
+              %input.form-control{ type: 'text', placeholder: 'Price' }
+        .form-group
+          %input.btn.btn-primary{ type: 'submit', value: 'Upload' }
+
+#shopping-cart.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4#myModalLabel.modal-title Shopping Cart
+      .modal-body
+        .media
+          .item-thumbnail
+          %h5 Name of item
+      .modal-footer
+        .form-group
+          %label Password
+          %input.form-control{ type: 'password', placeholder: 'Password' }
+        .form-group
+          %button.btn.btn-success.form-control{type: "button"} Pay Now
+        %a.text-muted Continue shopping
+
